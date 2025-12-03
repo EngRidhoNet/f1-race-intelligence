@@ -15,7 +15,7 @@ class Settings(BaseSettings):
     debug: bool = False
     
     # Database
-    database_url: str = "postgresql://user:password@localhost:5432/f1_intelligence"
+    database_url: str = "postgresql://localhost:5432/f1_intelligence"
     
     # LLM Configuration
     llm_provider: str = "ollama"  # Options: "ollama", "openai_compatible"

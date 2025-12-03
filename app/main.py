@@ -1,13 +1,20 @@
 """
 F1 Race Intelligence Backend - FastAPI Application
 """
+# app/main.py
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 
 from app.config import get_settings
 from app.core.logging import setup_logging, get_logger
-from app.routers import health, races, telemetry, chat, realtime
+
+import app.routers.health as health
+# import app.routers.races as races
+import app.routers.telemetry as telemetry
+import app.routers.chat as chat
+# import app.routers.realtime as realtime
+
 
 # Setup logging
 setup_logging()
@@ -62,10 +69,10 @@ app.add_middleware(
 
 # Include routers
 app.include_router(health.router)
-app.include_router(races.router)
+# app.include_router(races.router)
 app.include_router(telemetry.router)
 app.include_router(chat.router)
-app.include_router(realtime.router)
+# app.include_router(realtime.router)
 
 
 @app.get("/")

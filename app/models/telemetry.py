@@ -1,6 +1,3 @@
-"""
-Telemetry models: Lap, Stint, TelemetryFrame, TrackShapePoint.
-"""
 from typing import TYPE_CHECKING
 from sqlalchemy import String, Integer, Float, Boolean, ForeignKey, Index
 from sqlalchemy.orm import Mapped, mapped_column, relationship
